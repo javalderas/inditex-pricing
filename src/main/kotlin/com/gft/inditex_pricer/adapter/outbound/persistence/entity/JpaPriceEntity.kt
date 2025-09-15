@@ -3,6 +3,7 @@ package com.gft.inditex_pricer.adapter.outbound.persistence.entity
 import com.gft.inditex_pricer.domain.model.Money
 import com.gft.inditex_pricer.domain.model.Price
 import jakarta.persistence.*
+import java.time.LocalDateTime
 import java.time.ZoneOffset
 import java.time.ZonedDateTime
 import java.util.*
@@ -17,10 +18,10 @@ data class JpaPriceEntity(
     val brandId: String,
 
     @Column(name = "START_DATE", nullable = false)
-    val startDate: ZonedDateTime,
+    val startDate: LocalDateTime,
 
     @Column(name = "END_DATE", nullable = false)
-    val endDate: ZonedDateTime,
+    val endDate: LocalDateTime,
 
     @Column(name = "PRICE_LIST", nullable = false)
     val priceList: String,
@@ -43,8 +44,8 @@ fun JpaPriceEntity.toDomain(): Price =
         productId = this.productId,
         brandId = this.brandId,
         priceList = this.priceList,
-        startDate = this.startDate.withZoneSameInstant(ZoneOffset.UTC),
-        endDate = this.endDate.withZoneSameInstant(ZoneOffset.UTC),
-        priority = this.priority,
-        price = Money(this.price, Currency.getInstance(this.currency))
+        startDate = this.startDate.atZone(ZoneOffset.UTC),
+        endDate   = this.endDate.atZone(ZoneOffset.UTC),
+        priority  = this.priority,
+        price     = Money(this.price, Currency.getInstance(this.currency))
     )

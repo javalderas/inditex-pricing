@@ -22,8 +22,8 @@ object JpaPriceEntityStub {
             productId = productId,
             brandId = brandId,
             priceList = priceList,
-            startDate = LocalDateTime.parse(startDate).atZone(ZoneId.systemDefault()),
-            endDate = LocalDateTime.parse(endDate).atZone(ZoneId.systemDefault()),
+            startDate = LocalDateTime.parse(startDate),
+            endDate = LocalDateTime.parse(endDate),
             priority = priority,
             price = BigDecimal.valueOf(price).toDouble(),
             currency = currency

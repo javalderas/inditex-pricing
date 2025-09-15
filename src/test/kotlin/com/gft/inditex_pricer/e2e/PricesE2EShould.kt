@@ -17,6 +17,7 @@ class PricesE2EShould {
 
     @BeforeEach
     fun setup() {
+        //TimeZone.setDefault(TimeZone.getTimeZone("UTC"))
         RestAssured.baseURI = "http://localhost"
         RestAssured.port = port
     }
