@@ -2,7 +2,9 @@ name: CI - Inditex Pricing API with SonarCloud
 
 on:
   push:
-    branches: [ "master" ]  # Tu branch principal
+    branches:
+      - "master"
+      - "feature/**"  # Incluye todas las ramas feature
   pull_request:
     branches: [ "master" ]
 
