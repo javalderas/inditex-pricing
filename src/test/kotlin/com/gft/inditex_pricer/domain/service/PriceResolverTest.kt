@@ -6,7 +6,7 @@ import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 import java.time.ZonedDateTime
 
-class PriceResolverShould {
+class PriceResolverTest {
 
     @Test
     fun shouldReturnPriceWithHigherPriorityWhenTwoPricesOverlap() {

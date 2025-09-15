@@ -9,7 +9,7 @@ import org.mockito.kotlin.mock
 import org.mockito.kotlin.whenever
 import java.time.ZonedDateTime
 
-class PriceRepositoryAdapterShould {
+class PriceRepositoryAdapterTest {
 
     private val repository: SpringDataPriceRepository = mock()
     private val adapter = PriceRepositoryAdapter(repository)

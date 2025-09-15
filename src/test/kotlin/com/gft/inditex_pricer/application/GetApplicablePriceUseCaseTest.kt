@@ -10,7 +10,7 @@ import org.mockito.kotlin.mock
 import org.mockito.kotlin.whenever
 import java.time.ZonedDateTime
 
-class GetApplicablePriceUseCaseShould {
+class GetApplicablePriceUseCaseTest {
 
     private val port: PriceQueryPort = mock()
     private val useCase = GetApplicablePriceUseCase(port)

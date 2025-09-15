@@ -15,7 +15,7 @@ import org.mockito.kotlin.whenever
 import org.springframework.http.HttpStatus
 import java.time.ZonedDateTime
 
-class PriceControllerShould {
+class PriceControllerTest {
 
     private val useCase: GetApplicablePriceUseCase = mock()
     private val controller = PriceController(useCase)

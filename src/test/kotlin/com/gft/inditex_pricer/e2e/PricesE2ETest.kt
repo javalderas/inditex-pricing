@@ -10,14 +10,13 @@ import org.springframework.boot.test.web.server.LocalServerPort
 import java.time.ZonedDateTime
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-class PricesE2EShould {
+class PricesE2ETest {
 
     @LocalServerPort
     private var port: Int = 0
 
     @BeforeEach
     fun setup() {
-        //TimeZone.setDefault(TimeZone.getTimeZone("UTC"))
         RestAssured.baseURI = "http://localhost"
         RestAssured.port = port
     }
