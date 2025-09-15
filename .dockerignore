@@ -1,0 +1,7 @@
+# Keep only essential files
+.git/
+.gitignore
+README.md
+.DS_Store
+Thumbs.db
+*.log
