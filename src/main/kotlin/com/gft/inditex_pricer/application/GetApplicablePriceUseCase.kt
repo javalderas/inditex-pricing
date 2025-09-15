@@ -8,7 +8,7 @@ import java.time.ZonedDateTime
 class GetApplicablePriceUseCase(
     private val priceQueryPort: PriceQueryPort
 ) {
-    fun retrieveBy(productId: String, brandId: String, applicationDate: ZonedDateTime): Price? {
+    fun execute(productId: String, brandId: String, applicationDate: ZonedDateTime): Price? {
         val candidates = priceQueryPort.findApplicable(productId, brandId, applicationDate)
         return PriceResolver.resolve(candidates, applicationDate)
     }
