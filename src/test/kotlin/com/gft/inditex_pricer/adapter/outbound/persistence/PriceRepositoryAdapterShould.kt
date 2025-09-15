@@ -1,8 +1,8 @@
 package com.gft.inditex_pricer.adapter.outbound.persistence
 
+
 import com.gft.inditex_pricer.adapter.outbound.persistence.stubs.JpaPriceEntityStub
 import com.gft.inditex_pricer.domain.model.Price
-
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 import org.mockito.kotlin.mock

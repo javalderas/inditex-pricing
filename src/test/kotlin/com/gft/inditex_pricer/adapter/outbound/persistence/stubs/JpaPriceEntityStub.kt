@@ -3,6 +3,7 @@ package com.gft.inditex_pricer.adapter.outbound.persistence.stubs
 import com.gft.inditex_pricer.adapter.outbound.persistence.entity.JpaPriceEntity
 import java.math.BigDecimal
 import java.time.LocalDateTime
+import java.time.ZoneId
 
 object JpaPriceEntityStub {
 
@@ -21,8 +22,8 @@ object JpaPriceEntityStub {
             productId = productId,
             brandId = brandId,
             priceList = priceList,
-            startDate = LocalDateTime.parse(startDate),
-            endDate = LocalDateTime.parse(endDate),
+            startDate = LocalDateTime.parse(startDate).atZone(ZoneId.systemDefault()),
+            endDate = LocalDateTime.parse(endDate).atZone(ZoneId.systemDefault()),
             priority = priority,
             price = BigDecimal.valueOf(price).toDouble(),
             currency = currency

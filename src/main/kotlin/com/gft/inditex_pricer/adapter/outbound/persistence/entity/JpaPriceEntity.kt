@@ -3,8 +3,8 @@ package com.gft.inditex_pricer.adapter.outbound.persistence.entity
 import com.gft.inditex_pricer.domain.model.Money
 import com.gft.inditex_pricer.domain.model.Price
 import jakarta.persistence.*
-import java.time.LocalDateTime
-import java.time.ZoneId
+import java.time.ZoneOffset
+import java.time.ZonedDateTime
 import java.util.*
 
 @Entity
@@ -16,17 +16,17 @@ data class JpaPriceEntity(
     @Column(name = "BRAND_ID", nullable = false)
     val brandId: String,
 
-    @Column(name = "PRODUCT_ID", nullable = false)
-    val productId: String,
+    @Column(name = "START_DATE", nullable = false)
+    val startDate: ZonedDateTime,
+
+    @Column(name = "END_DATE", nullable = false)
+    val endDate: ZonedDateTime,
 
     @Column(name = "PRICE_LIST", nullable = false)
     val priceList: String,
 
-    @Column(name = "START_DATE", nullable = false)
-    val startDate: LocalDateTime,
-
-    @Column(name = "END_DATE", nullable = false)
-    val endDate: LocalDateTime,
+    @Column(name = "PRODUCT_ID", nullable = false)
+    val productId: String,
 
     @Column(name = "PRIORITY", nullable = false)
     val priority: Int,
@@ -43,8 +43,8 @@ fun JpaPriceEntity.toDomain(): Price =
         productId = this.productId,
         brandId = this.brandId,
         priceList = this.priceList,
-        startDate = this.startDate.atZone(ZoneId.of("UTC")),   // 👈 FIX
-        endDate = this.endDate.atZone(ZoneId.of("UTC")),       // 👈 FIX
+        startDate = this.startDate.withZoneSameInstant(ZoneOffset.UTC),
+        endDate = this.endDate.withZoneSameInstant(ZoneOffset.UTC),
         priority = this.priority,
         price = Money(this.price, Currency.getInstance(this.currency))
     )
