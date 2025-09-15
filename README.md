@@ -1,6 +1,13 @@
 # Inditex Pricing API
 
 Backend demo project for the Inditex technical test, implemented with **Kotlin 1.9**, **Spring Boot 3.5**, **Java 17+**, and **Hexagonal Architecture + DDD**.
+## 🔍 Code Quality
+
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=javalderas_inditex-pricing&metric=alert_status)](https://sonarcloud.io/dashboard?id=javalderas_inditex-pricing)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=javalderas_inditex-pricing&metric=coverage)](https://sonarcloud.io/dashboard?id=javalderas_inditex-pricing)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=javalderas_inditex-pricing&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=javalderas_inditex-pricing)
+[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=javalderas_inditex-pricing&metric=reliability_rating)](https://sonarcloud.io/dashboard?id=javalderas_inditex-pricing)
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=javalderas_inditex-pricing&metric=security_rating)](https://sonarcloud.io/dashboard?id=javalderas_inditex-pricing)
 
 ---
 
