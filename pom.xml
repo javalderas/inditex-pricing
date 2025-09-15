@@ -24,6 +24,24 @@
 		<maven.compiler.target>17</maven.compiler.target>
 		<kotlin.version>1.9.25</kotlin.version>
 		<kotlin.compiler.jvmTarget>17</kotlin.compiler.jvmTarget>
+		<!-- SonarCloud configuration -->
+		<sonar.organization>javalderas</sonar.organization>
+		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
+		<sonar.projectKey>javalderas_inditex-pricing</sonar.projectKey>
+		<sonar.projectName>Inditex Pricing API</sonar.projectName>
+
+		<!-- Coverage reports location for SonarCloud to import -->
+		<sonar.java.coveragePlugin>jacoco</sonar.java.coveragePlugin>
+		<sonar.coverage.jacoco.xmlReportPaths>target/site/jacoco/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
+
+		<!-- Exclude files from analysis -->
+		<sonar.exclusions>
+			**/target/**,
+			**/*Application.kt,
+			**/*Configuration.kt,
+			**/entity/**,
+			**/dto/**
+		</sonar.exclusions>
 	</properties>
 
 	<dependencies>
@@ -128,7 +146,30 @@
 					<target>17</target>
 				</configuration>
 			</plugin>
-
+			<plugin>
+				<groupId>org.jacoco</groupId>
+				<artifactId>jacoco-maven-plugin</artifactId>
+				<version>0.8.8</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>prepare-agent</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>report</id>
+						<phase>test</phase>
+						<goals>
+							<goal>report</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.sonarsource.scanner.maven</groupId>
+				<artifactId>sonar-maven-plugin</artifactId>
+				<version>3.10.0.2594</version>
+			</plugin>
 			<plugin>
 				<groupId>org.jetbrains.kotlin</groupId>
 				<artifactId>kotlin-maven-plugin</artifactId>
