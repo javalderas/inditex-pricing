@@ -2,7 +2,9 @@ name: CI - Inditex Pricing API
 
 on:
   push:
-    branches: [ "master" ]
+    branches:
+      - "master"
+      - "feature/**"
   pull_request:
     branches: [ "master" ]
 
