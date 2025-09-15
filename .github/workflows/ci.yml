@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - "master"
-      - "feature/**"  # Incluye todas las ramas feature
+      - "feature/**"
   pull_request:
     branches: [ "master" ]
 
