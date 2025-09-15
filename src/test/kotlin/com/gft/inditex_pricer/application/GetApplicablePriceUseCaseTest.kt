@@ -26,7 +26,7 @@ class GetApplicablePriceUseCaseTest {
 
         whenever(port.findApplicable("35455", "1", at)).thenReturn(listOf(lowPriority, highPriority))
 
-        val result = useCase.execute("35455", "1", at)
+        val result = useCase.retrieveBy("35455", "1", at)
 
         assertThat(result).isNotNull
         assertThat(result!!.priceList).isEqualTo("3")
@@ -38,7 +38,7 @@ class GetApplicablePriceUseCaseTest {
 
         whenever(port.findApplicable("35455", "1", at)).thenReturn(emptyList())
 
-        val result = useCase.execute("35455", "1", at)
+        val result = useCase.retrieveBy("35455", "1", at)
 
         assertThat(result).isNull()
     }
@@ -51,7 +51,7 @@ class GetApplicablePriceUseCaseTest {
 
         whenever(port.findApplicable("35455", "1", at)).thenReturn(listOf(candidate))
 
-        val result = useCase.execute("35455", "1", at)
+        val result = useCase.retrieveBy("35455", "1", at)
 
         assertThat(result).isNotNull
         assertThat(result!!.priceList).isEqualTo("1")
