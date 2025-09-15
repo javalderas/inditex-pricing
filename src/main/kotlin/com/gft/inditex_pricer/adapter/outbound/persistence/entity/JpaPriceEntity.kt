@@ -43,8 +43,8 @@ fun JpaPriceEntity.toDomain(): Price =
         productId = this.productId,
         brandId = this.brandId,
         priceList = this.priceList,
-        startDate = this.startDate.atZone(ZoneId.systemDefault()),
-        endDate = this.endDate.atZone(ZoneId.systemDefault()),
+        startDate = this.startDate.atZone(ZoneId.of("UTC")),   // 👈 FIX
+        endDate = this.endDate.atZone(ZoneId.of("UTC")),       // 👈 FIX
         priority = this.priority,
         price = Money(this.price, Currency.getInstance(this.currency))
     )

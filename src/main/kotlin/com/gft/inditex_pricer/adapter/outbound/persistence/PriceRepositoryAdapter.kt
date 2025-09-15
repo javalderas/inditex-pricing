@@ -22,7 +22,7 @@ class PriceRepositoryAdapter(
             .filter { at.toLocalDateTime().isAfter(it.startDate) || at.toLocalDateTime().isEqual(it.startDate) }
             .filter { at.toLocalDateTime().isBefore(it.endDate) }
             .map {
-                Price(
+                Price( //TODO: use mapper function
                     productId = it.productId,
                     brandId = it.brandId,
                     priceList = it.priceList,
