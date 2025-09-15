@@ -30,7 +30,7 @@ class PriceControllerTest {
             priority = 1,
             amount = 25.45
         )
-        whenever(useCase.execute(eq("35455"), eq("1"), any())).thenReturn(domainPrice)
+        whenever(useCase.retrieveBy(eq("35455"), eq("1"), any())).thenReturn(domainPrice)
 
         // When
         val response = controller.getApplicablePrice(
@@ -82,7 +82,7 @@ class PriceControllerTest {
 
     @Test
     fun shouldReturn404WhenNoPriceIsFound() {
-        whenever(useCase.execute(eq("35455"), eq("1"), any())).thenReturn(null)
+        whenever(useCase.retrieveBy(eq("35455"), eq("1"), any())).thenReturn(null)
 
         val response = controller.getApplicablePrice(
             productId = "35455",
